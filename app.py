@@ -4,7 +4,11 @@ import pandas as pd
 import numpy as np
 
 
-model = pickle.load(open('Log_reg_loan_status.pkl','rb'))  # rb = read binary
+lr = pickle.load(open('lr1.pkl','rb'))  # rb = read binary
+dt = pickle.load(open('df1.pkl','rb'))  # rb = read binary
+rf = pickle.load(open('rf1.pkl','rb'))  # rb = read binary
+
+
 st.title('Loan Status Prediction Web App')
 st.header('Fill the details to generate Loan Status')
 
@@ -83,6 +87,7 @@ st.dataframe(test_df)
 gen_prediction = st.button("Predict")
 if gen_prediction:
     st.success(model.predict(test_df)[0])
+
 
 
 
