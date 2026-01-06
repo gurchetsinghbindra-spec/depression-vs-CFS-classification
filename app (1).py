@@ -6,7 +6,7 @@ import streamlit as st
 
 #### Load ML Model using Pickle Files
 lr = pickle.load(open('lr1.pkl','rb'))  # rb = read binary
-dt = pickle.load(open('dt1.pkl','rb'))  # rb = read binary
+dt = pickle.load(open('df1.pkl','rb'))  # rb = read binary
 rf = pickle.load(open('rf1.pkl','rb'))  # rb = read binary
 
 
@@ -167,5 +167,6 @@ if st.button('Predict'):
   else:
    pred = rf.predict(test_df)
    st.success(pred[0])
+
 
 
